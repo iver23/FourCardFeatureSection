@@ -3,7 +3,6 @@ html {
 }
 
 body {
-  padding: 30px;
   background-color: hsl(0, 0%, 98%);
 }
 
@@ -13,26 +12,29 @@ p {
 
 .introduction {
   text-align: center;
+  /* padding: 30px; */
+  margin-bottom: 30px;
+  padding-top: 30px;
 }
 
 .title1 {
   font-weight: 200;
-  font-size: 1.9rem;
+  font-size: calc(20px + (30.4 - 20) * ((100vw - 300px) / (1600 - 300)));
   color: hsl(234, 12%, 34%);
 }
 
 .title2 {
   font-weight: 600;
-  font-size: 1.9rem;
+  font-size: calc(20px + (30.4 - 20) * ((100vw - 300px) / (1600 - 300)));
   color: hsl(234, 12%, 34%);
   margin-bottom: 20px;
 }
 
 .description {
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: calc(12.8px + (14.4 - 12.8) * ((100vw - 300px) / (1600 - 300)));
+  line-height: 20px;
   color: hsl(229, 6%, 66%);
-  margin-bottom: 70px;
 }
 
 .card {
@@ -40,8 +42,8 @@ p {
   border-radius: 5px;
   border-top: 4px solid;
   padding: 30px;
-  width: 270px;
-  height: 180px;
+  max-width: 270px;
+  max-height: 180px;
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.212);
 }
 
@@ -53,12 +55,12 @@ p {
 
 .card_description {
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: hsl(229, 6%, 66%);
   line-height: 1.3rem;
 }
 img {
-  margin-top: 50px;
+  margin-top: 30px;
   float: right;
 }
 
@@ -82,11 +84,33 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  justify-items: center;
+  grid-row-gap: 15px;
 }
 
 .central_cards {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 30px;
+  grid-row-gap: 15px;
+}
+
+.attribution {
+  padding: 30px;
+  text-align: center;
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 10px;
+  }
+  .cards_container {
+    grid-template-columns: 1fr;
+    grid-column-gap: 15px;
+  }
+
+  .central_cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }
